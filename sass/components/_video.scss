@@ -1,51 +1,168 @@
-.video {
-   padding-top: 98px;
-   &__img {
-      @include media-lg {
-         width: 130%;
-      }
-      @include media-md {
-         display: none;
-      }
-   }
-   &__img-md {
-      display: none;
-      @include media-md {
-         display: block;
-      }
-      @include media-min-md {
-         width: 130%;
-      }
-   }
-   @include media-md {
-      padding-top: 80px;
-   }
-}
 .video__player {
-   margin-top: 60px;
-   padding: 0 20px;
    position: relative;
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
-   @include media-md {
-      margin-top: 50px;
-   }
+   border: 1px solid $color-gold;
 }
-
+.video__poster {
+   background: url("./assets/img/video-player.jpg") no-repeat;
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   z-index: 1;
+   background-size: cover;
+   background-position: center center;
+   cursor: pointer;
+   animation: fade-out 1s;
+}
+video {
+   width: 100%;
+   object-fit: cover;
+}
 .video__button {
    position: absolute;
-   background: transparent;
+   width: 20%;
+   height: 20%;
+   background: url("./assets/svg/play-btn.svg");
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center center;
    border: none;
    @extend %transition;
+   z-index: 2;
+   cursor: pointer;
    &:hover {
       filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
    }
-   img {
-      @include media-md {
-         width: 64.62px;
-         height: 64.69px;
-         display: none;
-      }
+}
+
+.video__controls {
+   width: calc(100% - 20px);
+   padding: 10px 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.player-control {
+   background: url("./assets/svg/play.svg");
+   width: 30px;
+   height: 30px;
+   background-size: contain;
+   background-position: center center;
+   background-repeat: no-repeat;
+   @extend %transition;
+   &:hover {
+      filter: var(--icons-hover-color);
    }
+   @include media-md {
+      width: 20px;
+      height: 20px;
+      padding-right: 10px;
+   }
+}
+.volume-control {
+   background: url("./assets/svg/volume.svg");
+   width: 40px;
+   height: 40px;
+   padding: 0 10px;
+   background-size: contain;
+   background-position: center center;
+   background-repeat: no-repeat;
+   @extend %transition;
+   &:hover {
+      filter: var(--icons-hover-color);
+   }
+   @include media-md {
+      width: 20px;
+      height: 20px;
+      padding: 0 10px;
+   }
+}
+.fullscreen-control {
+   background: url("./assets/svg/fullscreen.svg");
+   width: 30px;
+   height: 30px;
+   background-size: contain;
+   background-position: center center;
+   background-repeat: no-repeat;
+   @extend %transition;
+   &:hover {
+      filter: var(--icons-hover-color);
+   }
+   @include media-md {
+      padding-left: 10px;
+   }
+}
+
+.video-range {
+   width: 50%;
+   transition: background 0.3 ease-in;
+   background: linear-gradient(to right, #bdae82 0%, #bdae82 0%, #b3b3b3 0%, #b3b3b3 100%);
+   border: solid 1px $color-gold;
+   border-radius: 8px;
+   height: 7px;
+   outline: none;
+   -webkit-appearance: none;
+}
+.volume-range {
+   transition: background 0.3 ease-in;
+   width: 15%;
+   background: linear-gradient(to right, #bdae82 0%, #bdae82 50%, #b3b3b3 50%, #b3b3b3 100%);
+   border: solid 1px $color-gold;
+   border-radius: 8px;
+   height: 7px;
+   outline: none;
+   -webkit-appearance: none;
+}
+
+.video-range::-webkit-slider-thumb {
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   position: relative;
+   left: 0;
+   -webkit-appearance: none;
+   cursor: ew-resize;
+   background: $color-light;
+   @include media-md {
+      width: 10px;
+      height: 10px;
+   }
+}
+.volume-range::-webkit-slider-thumb {
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   -webkit-appearance: none;
+   cursor: ew-resize;
+   background: $color-light;
+   @include media-md {
+      width: 10px;
+      height: 10px;
+   }
+}
+.rewind,
+.forward {
+   @extend %font-primary;
+   @include font($size: 2rem, $height: 3rem, $weight: normal);
+   color: $color-grey;
+   @extend %transition;
+   cursor: pointer;
+   user-select: none;
+   &:hover {
+      color: $color-gold;
+   }
+   @include media-md {
+      @include font($size: 1.5rem, $height: 3rem, $weight: normal);
+      padding-left: 10px;
+   }
+}
+
+.hide {
+   display: none;
+   @extend %transition;
 }

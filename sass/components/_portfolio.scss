@@ -45,14 +45,24 @@
    }
 }
 .portfolio__image {
+   object-fit:cover;
+   overflow: hidden;
    @include media-lg {
       text-align: center;
       display: flex;
       justify-content: center;
+      object-fit:cover;
+      overflow: hidden;
+      width: 100%;
    }
    img {
+      transition: .5s ease all;
       @include media-min-sm {
          width: 130%;
+      }
+      &:hover {
+         cursor: pointer;
+         transform: scale(1.1);
       }
    }
 }

@@ -49,7 +49,7 @@
    <section class="hero">
       <div class="hero__content">
       <h1 class="hero__title" data-i18n="hero-title">Alexa Rise</h1>
-      <p class="hero__description" data-i18n="hero-text">Save sincere emotions, romantic feelings and happy moments of life 
+      <p class="hero__description" data-i18n="hero-text">Save sincere emotions, romantic feelings and happy moments of life
          together with professional photographer Alexa Rise</p>
       <div class="hero__button">
          <button class="button button-colored button-effect" data-i18n="hire">Hire me</button>
@@ -63,7 +63,7 @@
       <div class="section-title">
          <h2 data-i18n="skills">Skills</h2>
       </div>
-      
+
       <div class="skills__items layout-4-columns">
          <div class="skills__item-card">
             <h4 class="skills__item-title" data-i18n="skill-title-1">Digital photography</h4>
@@ -109,12 +109,20 @@
       <div class="section-title">
          <h2 data-i18n="video">Video</h2></div>
       <div class="video__player">
-         <img class="video__img" src="./assets/img/video-player.jpg" alt="video player">
-         <img class="video__img-md" src="./assets/img/video-player-md.jpg" alt="video player">
-         <button class="video__button"><img src="./assets/svg/play_button.svg" alt="play button"></button>
-         
+         <div class="video__poster"></div>
+         <video src="./assets/video/video.mp4"></video>
+         <div class="video__button"></div>
+      <div class="video__controls">
+         <div class="player-control"></div>
+         <input type="range" value="0" min="0" max="100" class="video-range">
+         <div class="volume-control"></div>
+         <input type="range" value="0.5" min="0" max="1" class="volume-range" step="0.01">
+         <div class="rewind" data-skip="-10">&lt;&lt;10s</div>
+         <div class="forward" data-skip="10">&gt;&gt;10s</div>
+         <div class="fullscreen-control"></div>
       </div>
-   
+   </div>
+
    </section>
    <section class="price" id="price">
       <div class="section-title">
@@ -171,10 +179,10 @@
          </div>
       <div class="contacts__form">
          <form method="post">
-            <input type="email" id="email" name="email" placeholder="E-mail">
-            <input type="tel" id="phone" name="phone" placeholder="Phone" data-i18n="placeholder-phone">
+            <input type="email" id="email" name="email" placeholder="E-mail" autocomplete="on">
+            <input type="tel" id="phone" name="phone" placeholder="Phone" data-i18n="placeholder-phone" autocomplete="on">
             <textarea id="message" name="message" placeholder="Message" style="height:100px" data-i18n="placeholder-message"></textarea>
-        
+
             <button class="button button-colored button-effect" data-i18n="send-message">Send message</button>
           </form>
       </div>
