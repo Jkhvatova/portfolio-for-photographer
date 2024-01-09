@@ -1,0 +1,96 @@
+.contacts-container {
+   background: var(--contacts-background-image);
+   background-size: auto 700px;
+   background-position: center center;
+   background-repeat: no-repeat;
+   @include media-md {
+      background-size: auto 600px;
+      justify-content: center;
+   }
+}
+.contacts {
+   display: flex;
+   justify-content: flex-end;
+   padding: 0;
+   padding-bottom: 195px;
+   @include media-md {
+      justify-content: center;
+      padding-bottom: 111px;
+      padding-top: 51px;
+   }
+}
+.contacts__content {
+   margin-top: 60px;
+   display: flex;
+   width: 32.6%;
+   flex-direction: column;
+   @include media-md {
+      width: 61.7%;
+      margin-top: 0;
+      justify-content: center;
+   }
+   @include media-sm {
+      width: 90%;
+   }
+}
+.contacts__section-title {
+   margin-left: 0;
+   h2 {
+      padding-left: 0;
+      @include media-md {
+         padding-right: 0;
+      }
+   }
+   @include media-md {
+      padding-top: 0;
+      margin: 0 auto;
+   }
+}
+.contacts__form {
+   margin-top: 40px;
+   padding-right: 20px;
+   @include media-md {
+      margin-top: 20px;
+      padding-top: 12px;
+      padding-right: 0;
+   }
+   input,
+   textarea {
+      box-sizing: border-box;
+      width: 100%;
+      color: var(--gold-to-dark-color);
+      @extend %font-primary;
+      @include font($size: 2rem, $height: 4rem, $weight: normal);
+      background: var(--placeholder-background-color);
+      border: 2px solid $color-gold;
+      padding: 3px 0 3px 18px;
+      margin-bottom: 20px;
+      outline-color: $color-light;
+      @include media-md {
+         background-color: var(--placeholder-background-color);
+      }
+      &::placeholder {
+         font-family: inherit;
+         color: var(--gold-to-dark-color);
+         font-size: 20px;
+      }
+   }
+   textarea {
+      resize: none;
+      height: 100px;
+      margin-bottom: 27px;
+   }
+   button {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      &:hover {
+         background-color: var(--gold-to-dark-color);
+         color: var(--light-to-gold-color);
+      }
+   }
+}
+
+outline {
+   color: $color-light;
+}
