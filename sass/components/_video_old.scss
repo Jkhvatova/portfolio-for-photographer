@@ -1,0 +1,51 @@
+.video {
+   padding-top: 98px;
+   &__img {
+      @include media-lg {
+         width: 130%;
+      }
+      @include media-md {
+         display: none;
+      }
+   }
+   &__img-md {
+      display: none;
+      @include media-md {
+         display: block;
+      }
+      @include media-min-md {
+         width: 130%;
+      }
+   }
+   @include media-md {
+      padding-top: 80px;
+   }
+}
+.video__player {
+   margin-top: 60px;
+   padding: 0 20px;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   @include media-md {
+      margin-top: 50px;
+   }
+}
+
+.video__button {
+   position: absolute;
+   background: transparent;
+   border: none;
+   @extend %transition;
+   &:hover {
+      filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+   }
+   img {
+      @include media-md {
+         width: 64.62px;
+         height: 64.69px;
+         display: none;
+      }
+   }
+}

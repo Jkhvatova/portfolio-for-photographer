@@ -1,0 +1,41 @@
+@mixin font($size, $height: $size, $weight: bold, $style: normal, $spacing: 0em) {
+   font-size: $size;
+   font-weight: $weight;
+   font-style: $style;
+   line-height: $height;
+   letter-spacing: $spacing;
+}
+
+@mixin media-lg {
+   @media (max-width: $width-lg) {
+      @content;
+   }
+}
+
+@mixin media-md {
+   @media (max-width: $width-md) {
+      @content;
+   }
+}
+
+@mixin media-min-md {
+   @media (max-width: $width-min-md) {
+      @content;
+   }
+}
+
+@mixin media-sm {
+   @media (max-width: $width-sm) {
+      @content;
+   }
+}
+@mixin media-min-sm {
+   @media (max-width: $width-min-sm) {
+      @content;
+   }
+}
+@mixin media-xs {
+   @media (max-width: $width-xs) {
+      @content;
+   }
+}
