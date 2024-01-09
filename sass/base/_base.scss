@@ -1,0 +1,65 @@
+html {
+   font-size: 10px;
+   scroll-behavior: smooth;
+   overflow-x: hidden;
+}
+body {
+   @extend %font-primary;
+   background-color: var(--background-color);
+   color: var(--font-color);
+   overflow-x: hidden;
+   &:before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      background-color: transparent;
+      transition: background-color 200ms ease-in-out;
+      z-index: -100;
+   }
+}
+.body-active {
+   transition: background-color 200ms;
+   &:before {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: background-color 200ms ease-in-out;
+      z-index: 1;
+   }
+   @extend %transition;
+}
+h1 {
+   @extend %font-add;
+   @include font($size: 6rem, $height: 12rem);
+   @include media-md {
+      @include font($size: 3.2rem, $height: 6.4rem, $weight: normal);
+   }
+}
+
+h2 {
+   @extend %font-add;
+   color: var(--section-header-color);
+   @include font($size: 4rem, $height: 8rem);
+   @include media-md {
+      @include font($size: 3.2rem, $height: 8rem, $weight: normal);
+   }
+   @include media-sm {
+      font-size: 2.6rem;
+   }
+}
+
+h3 {
+   @extend %font-add;
+   @include font($size: 2.8rem, $height: 5.6rem);
+}
+
+h4 {
+   @extend %font-primary;
+   @include font($size: 2rem, $height: 4rem);
+   @include media-sm {
+      line-height: 3rem;
+      text-align: center;
+   }
+}

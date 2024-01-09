@@ -1,0 +1,39 @@
+.layout-4-columns {
+   display: flex;
+   justify-content: space-between;
+   > * {
+      width: 25%;
+   }
+   @include media-md {
+      flex-wrap: wrap;
+      > * {
+         flex: 0 1 47%;
+      }
+   }
+   @include media-min-md {
+      > * {
+         flex: 0 1 100%;
+      }
+   }
+}
+
+.layout-3-columns {
+   display: flex;
+   gap: 25px;
+   > * {
+      width: 32%;
+   }
+   @include media-lg {
+      justify-content: center;
+      flex-wrap: wrap;
+      > * {
+         flex: 0 1 450px;
+      }
+   }
+   @include media-md {
+      > * {
+         flex: 0 1 100%;
+         flex-wrap: wrap;
+      }
+   }
+}

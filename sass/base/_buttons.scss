@@ -1,0 +1,35 @@
+.button {
+   @extend %font-primary;
+   @include font($size: 2rem, $height: 4rem, $weight: normal);
+   color: var(--gold-to-dark-color);
+   width: 220px;
+   padding: 7px 0 6px 0;
+   border: 1px solid $color-gold;
+   background: var(--button-background-color);
+   cursor: pointer;
+   @extend %transition;
+   &:hover {
+      color: $color-light;
+   }
+}
+.button-colored {
+   background-color: var(--button-color);
+   color: $color-dark;
+}
+
+.button-active {
+   @extend .button-colored;
+   background-color: var(--button-active-background-color);
+   color: var(--button-active-color);
+}
+
+.button-effect {
+   border-color: $color-gold;
+   &:hover {
+      transform: translatey(-10%);
+   }
+   &:focus {
+      border-radius: 5px;
+      transform: translatey(0);
+   }
+}

@@ -1,0 +1,57 @@
+$color-dark: #000000;
+$color-dark-matte: #1c1c1c;
+$color-light: #ffffff;
+$color-gold: #bdae82;
+
+$width-lg: 1430px;
+$width-md: 768px;
+$width-min-md: 620px;
+$width-sm: 520px;
+$width-min-sm: 460px;
+$width-xs: 420px;
+
+html[data-theme="dark"] {
+   --background-color: #{$color-dark};
+   --font-color: #{$color-light};
+   --primary-color: #{$color-light};
+   --secondary-color: #{$color-gold};
+   --section-title-background: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
+   --section-header-color: #{$color-gold};
+   --switcher-background-image: url("./assets/svg/icon_to-light.svg");
+   --hero-background-image: url("./assets/img/hero-bg.jpg");
+   --contacts-background-image: url("./assets/img/contacts-bg.jpg");
+   --light-to-gold-color: #{$color-light};
+   --filter-color: invert(0);
+   --logo-hover-color: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+   --menu-hover-color: #{$color-gold};
+   --icons-hover-color: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+   --button-color: #{$color-gold};
+   --button-active-color: #{$color-dark};
+   --button-active-background-color: #{$color-gold};
+   --button-background-color: none;
+   --gold-to-dark-color: #{$color-gold};
+   --placeholder-background-color: transparent;
+}
+
+html[data-theme="light"] {
+   --background-color: #{$color-light};
+   --font-color: #{$color-dark-matte};
+   --primary-color: #{$color-dark-matte};
+   --secondary-color: #{$color-gold};
+   --section-title-background: linear-gradient(to top, #fff 39px, #1c1c1c 39px, #1c1c1c 41px, #fff 41px);
+   --section-header-color: #{$color-dark-matte};
+   --switcher-background-image: url("./assets/svg/icon_to-dark.svg");
+   --hero-background-image: url("./assets/img/hero-bg_light.jpg");
+   --contacts-background-image: url("./assets/img/contacts-bg_light.jpg");
+   --light-to-gold-color: #{$color-gold};
+   --filter-color: invert(1);
+   --logo-hover-color: invert(0);
+   --menu-hover-color: #{$color-light};
+   --icons-hover-color: invert(1);
+   --button-color: #{$color-light};
+   --button-active-color: #{$color-gold};
+   --button-active-background-color: #{$color-dark-matte};
+   --button-background-color: #{$color-gold};
+   --gold-to-dark-color: #{$color-dark-matte};
+   --placeholder-background-color: rgba(255, 255, 255, 0.5);
+}
